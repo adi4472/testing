@@ -10,23 +10,37 @@ import {
   StatusBar,
   Dimensions,
 } from "react-native";
+import {
+  useDimensions,
+  useDeviceOrientation,
+} from "@react-native-community/hooks";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
+import ViewImageScreen from "./app/screens/ViewImageScreen";
 
 export default function App() {
-  console.log(Dimensions.get("screen"));
-  console.log("App Executed");
   return (
-    <SafeAreaView style={styles.container}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <View
-        style={{ backgroundColor: "dodgerblue", width: "100%", height: "30%" }}
-      ></View>
-    </SafeAreaView>
+        style={{
+          backgroundColor: "dodgerblue",
+          width: 100,
+          height: 100,
+        }}
+      >
+        <View
+          style={{
+            backgroundColor: "gold",
+            width: 50,
+            height: 50,
+          }}
+        ></View>
+      </View>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
